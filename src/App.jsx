@@ -1,20 +1,22 @@
 import "./App.scss";
-import Card from "./components/Card";
-
+import { TaskProvider} from "./Context";
+import Modal from "./components/Modal";
+import TasksCard from "./components/TasksCard";
 function App() {
   return (
     <main>
-      <h1>To Do List</h1>
+      <Modal/>
+      <TaskProvider>
+      <header>
+        <h1>To Do</h1>
+        <button id="show-modal">Add task</button>
+      </header>
       <section className="bg">
         <section className="list">
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
+          <TasksCard/>
         </section>
       </section>
+      </TaskProvider>
     </main>
   );
 }
