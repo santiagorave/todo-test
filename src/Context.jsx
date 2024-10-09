@@ -9,7 +9,7 @@ export const TaskProvider = function ({ children }) {
 
   useEffect(() => {
     getTasks().then(setTasks);
-  }, []);
+  },[setTasks]);
 
-  return <taskContext.Provider value={{tasks}}>{children}</taskContext.Provider>;
+  return <taskContext.Provider value={{tasks,modal,setModal,setTasks}}>{children}</taskContext.Provider>;
 };
