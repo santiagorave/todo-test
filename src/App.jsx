@@ -4,7 +4,7 @@ import TasksCard from "./components/TasksCard";
 import { useContext, useState } from "react";
 import { taskContext } from "./Context";
 function App() {
-  const { modal, setModal } = useContext(taskContext);
+  const { modal, setModal,setData,setEdit } = useContext(taskContext);
   const [filter,setFilter] = useState('All');
   const handleChange = function(evt){
     setFilter(evt.target.value)
@@ -14,7 +14,7 @@ function App() {
       {modal && <Modal />}
       <header>
         <h1>To Do</h1>
-        <button onClick={() => setModal(true)}>Add task</button>
+        <button onClick={() => { setData({id:null,title:'',desc:'',category:''});  setModal(true); setEdit(false)}}>Add task</button>
       </header>
       <section className="bg">
         <section className="list">

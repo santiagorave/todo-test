@@ -4,5 +4,7 @@ export async function postTasks(name,desc,tag){
         method: 'POST',
          headers: { 'Content-Type': 'application/json' },
         body:JSON.stringify({name:name,description:desc, status:'Pending',tag:tag })
+    }).catch(error => {
+        console.log(error)
     })
 }

@@ -9,7 +9,7 @@ export default function Modal() {
       <aside className="modal-content">
         <span className="modal-content-head">
           <p>Add a new Task</p>
-           <button onClick={()=> setModal(false)}><i  className="fa-solid fa-xmark"></i></button>
+           <button onClick={()=> {setModal(false);}}><i  className="fa-solid fa-xmark"></i></button>
         </span>
         <Form/>
       </aside>
